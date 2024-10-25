@@ -114,7 +114,7 @@ function NavBar() {
                     alt="Your Company"
                   />
                   <span className="font-bold text-white  tracking-wide ml-2 text-xl">
-                    FinaPlay
+                    InnoSave
                   </span>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

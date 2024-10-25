@@ -271,7 +271,7 @@ function Login() {
             </Components.LeftOverlayPanel>
 
             <Components.RightOverlayPanel signinIn={signIn}>
-              <Components.Title>Welcome to FinaPlay!</Components.Title>
+              <Components.Title>Welcome to InnoSave!</Components.Title>
               <Components.Paragraph>
                 One Click, Infinite Connections - Your Content, Everywhere!
               </Components.Paragraph>
