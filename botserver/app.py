@@ -8,7 +8,7 @@ import yfinance as yf
 load_dotenv()
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, origins="http://localhost:5173")
 
 genai.configure(api_key=os.environ.get("API_KEY"))
 model = genai.GenerativeModel('models/gemini-1.5-flash')
