@@ -10,11 +10,16 @@ import BudgetingImage from "../assets/budget.jpg";
 import fin from "../assets/fin.jpg";
 import invest from "../assets/invest.jpg";
 import { Home, QuestionAnswerRounded } from "@mui/icons-material";
+import BlogHome from "./BlogHome.jsx";
 
 export function Learning() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-3 gap-10 m-8">
+      <div className="flex flex-col items-start justify-center gap-4">
+        <div className="font-bold text-3xl px-4">
+          Recommended Courses
+        </div>
+      <div className="grid grid-cols-3 gap-10 mx-4 my-2">
         <Card
           to="/budgeting"
           title="Budgeting"
@@ -33,6 +38,13 @@ export function Learning() {
           description="Understand loans, credit management, and financial planning tools."
           image={fin}
         />
+      </div>
+      </div>
+      <div className="flex flex-col items-start justify-center gap-4 mt-8">
+        <div className="font-bold text-3xl px-4">
+          Blogs and Articles
+        </div>
+      <BlogHome />
       </div>
     </div>
   );

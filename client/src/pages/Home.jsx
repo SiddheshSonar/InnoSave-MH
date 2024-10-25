@@ -84,7 +84,7 @@ const Home = () => {
                     </div> */}
           </div>
         </div>
-        <section className="grid place-content-center bg-neutral-900 p-12">
+        <section className="grid place-content-center p-12">
           <Center>
             <FloatingPhone />
           </Center>
@@ -102,7 +102,7 @@ const FloatingPhone = () => {
         transformStyle: "preserve-3d",
         transform: "rotateY(-30deg) rotateX(15deg)",
       }}
-      className="rounded-[24px] bg-[#33006F]"
+      className="rounded-[24px] bg-primary"
     >
       <motion.div
         initial={{
@@ -117,7 +117,7 @@ const FloatingPhone = () => {
           duration: 2,
           ease: "easeInOut",
         }}
-        className="relative h-96 w-56 rounded-[24px] border-2 border-b-4 border-r-4 border-white border-l-[#E5E7EB] border-t-[#E5E7EB] bg-[#33006F] p-1 pl-[3px] pt-[3px]"
+        className="relative h-96 w-56 rounded-[24px] border-2 border-b-4 border-r-4 border-white border-l-[#E5E7EB] border-t-[#E5E7EB] bg-primary p-1 pl-[3px] pt-[3px]"
       >
         <HeaderBar />
         <Screen />
@@ -150,7 +150,7 @@ const Screen = () => {
         viewBox="0 0 50 39"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-[#33006F]"
+        className="fill-primary"
       >
         <path
           d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
@@ -167,13 +167,13 @@ const Screen = () => {
           // navigate("/uploads")
           window.location.href = "/tasks";
         }}
-        className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white py-2 text-sm font-medium text-[#33006F] backdrop-blur"
+        className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white py-2 text-sm font-medium text-primary backdrop-blur"
       >
         Get Started
       </button>
 
       {/* <div className="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-char" /> */}
-      <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-[#33006F]" />
+      <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-primary" />
     </div>
   );
 };

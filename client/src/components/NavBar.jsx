@@ -12,17 +12,25 @@ import DailyModal from "./DailyModal";
 import NotiModal from "./NotiModal";
 import EmailIcon from "@mui/icons-material/Email";
 import { Leaderboard, Logout, Person, Stream } from "@mui/icons-material";
+import {
+  FiArrowRight,
+  FiBarChart2,
+  FiChevronDown,
+  FiHome,
+  FiPieChart,
+} from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
 import { AiOutlineProfile } from "react-icons/ai";
 import { RiProfileLine } from "react-icons/ri";
 
 const navigation = [
   { name: "Home", href: "/home", current: false },
   { name: "Financial Habits", href: "/tasks", current: false },
+  { name: "Party", href: "/party", current: false },
   { name: "Smart Investing", href: "/stock", current: false },
   // { name: "Smart Savings", href: "/savings", current: false },
   { name: "Learning", href: "/learning", current: false },
-  { name: "Party", href: "/party", current: false },
-  { name: "Blog", href: "/blog", current: false },
+  // { name: "Blog", href: "/blog", current: false },
 ];
 
 function classNames(...classes) {
@@ -36,6 +44,19 @@ function NavBar() {
   const [pfp, setPfp] = useState(JSON.parse(localStorage.getItem("user")).pfp);
   const [mopen, setOpen] = useState(false);
   const [nopen, setNOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+  };
 
   const openNewPage = () => {
     window.open("http://localhost:9000/", "_blank");
@@ -66,7 +87,7 @@ function NavBar() {
   }, [window.location.pathname]);
 
   return (
-    <Disclosure as="nav" className="bg-[#33006F] sticky top-0 z-[999] ">
+    <Disclosure as="nav" className="bg-primary sticky top-0 z-[999] ">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-16">
@@ -93,7 +114,7 @@ function NavBar() {
                     alt="Your Company"
                   />
                   <span className="font-bold text-white  tracking-wide ml-2 text-xl">
-                  FinaPlay
+                    FinaPlay
                   </span>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -104,7 +125,7 @@ function NavBar() {
                         href={item.href}
                         className={classNames(
                           item.href === path
-                            ? "bg-gray-900 underline font-bold"
+                            ? "bg-primary-light underline font-bold"
                             : " hover:underline",
                           "rounded-md px-3 py-2 text-sm text-white"
                         )}
@@ -113,6 +134,32 @@ function NavBar() {
                         {item.name}
                       </a>
                     ))}
+                    <div
+                    className="relative inline-block">
+                      <button
+                        onClick={toggleDropdown}
+                        onMouseEnter={handleMouseEnter}
+                        className={`flex items-center gap-1 px-4 py-2 text-sm font-medium text-white rounded-md focus:outline-none
+                        ${isOpen ? "bg-primary-light" : "hover:bg-primary-light"}
+                          `}
+                      >
+                        Helpers
+                        <FiChevronDown className={`${isOpen ? "rotate-180" : ""} transition-transform`} />
+                      </button>
+
+                      {isOpen && (
+                        <div
+                        onMouseLeave={handleMouseLeave}  
+                        className="absolute mt-2 w-52 rounded-md bg-white shadow-lg">
+                          <ul className="py-1 text-gray-700">
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Tax Assistant</li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Investment Portfolio Suggestions</li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Expense Tracker</li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Bank Statment Analyzer</li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

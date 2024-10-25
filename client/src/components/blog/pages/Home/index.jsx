@@ -36,12 +36,12 @@ const Home = ({ allBlogs }) => {
       <Header />
 
       {/* Search Bar */}
-      <SearchBar
+      {/* <SearchBar
         value={searchKey}
         clearSearch={handleClearSearch}
         formSubmit={handleSearchBar}
         handleSearchKey={(e) => setSearchKey(e.target.value)}
-      />
+      /> */}
 
       {/* Blog List & Empty View */}
       {!blogs.length ? <EmptyList /> : <BlogList allBlogs={allBlogs} blogs={blogs} />}

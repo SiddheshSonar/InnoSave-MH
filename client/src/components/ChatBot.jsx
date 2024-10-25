@@ -68,7 +68,7 @@ const StaggeredDropDown = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "bottom", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute bottom-[120%] left-[50%] w-[20rem] overflow-hidden"
+          className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute bottom-[120%] left-[-100px] w-[20rem] overflow-hidden"
         >
           <div className="w-full h-full flex flex-col gap-2">
             <Button

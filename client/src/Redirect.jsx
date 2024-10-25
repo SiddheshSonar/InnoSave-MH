@@ -5,7 +5,7 @@ const Redirect = () => {
 
     useEffect(() => {
         if (token) {
-            window.location.href = '/home';
+            window.location.href = '/tasks';
         } else {
             window.location.href = '/login';
         }
