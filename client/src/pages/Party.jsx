@@ -179,7 +179,7 @@ const Party = () => {
                                                         )
                                                         :
                                                         (
-                                                            <div className='font-bold text-xl bg-red text-white p-2.5 text-center rounded-xl'>
+                                                            <div className='font-bold text-xl bg-red-600 text-white p-2.5 text-center rounded-xl'>
                                                                 Not Ready
                                                             </div>
                                                         )}

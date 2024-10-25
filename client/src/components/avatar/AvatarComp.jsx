@@ -35,8 +35,8 @@ const AvatarComp = ({ image, user }) => {
                 />
                 <div className='w-[60%] flex flex-col items-start gap-4'>
                     <div className='w-full flex flex-col gap-2 p-1'>
-                        <Bar name='Health' icon={<FavoriteIcon className='text-red' />} value={user.gaming.health} maxValue={user.gaming.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red" />
-                        <Bar name='Experience' icon={<StarIcon className='text-yellow' />} value={user.gaming.exp} maxValue={user.gaming.maxExp} desc="The Experience Bar indicates your experience, Once it goes above the maximum value you will level up!!" barstyle="bg-yellow" />
+                        <Bar name='Health' icon={<FavoriteIcon className='text-red-600' />} value={user.gaming.health} maxValue={user.gaming.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red-600" />
+                        <Bar name='Experience' icon={<StarIcon className='text-yellow-600' />} value={user.gaming.exp} maxValue={user.gaming.maxExp} desc="The Experience Bar indicates your experience, Once it goes above the maximum value you will level up!!" barstyle="bg-yellow-600" />
                     </div>
                     <div className='w-full flex items-center justify-between'>
                         <div className='flex items-center'>

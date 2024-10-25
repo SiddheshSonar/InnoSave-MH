@@ -353,6 +353,10 @@ const userSchema = new mongoose.Schema({
   inventory: inventoryItem,
   tasks: [TaskSchema],
   expenses: [expenseSchema],
+  monthlyIncome: {
+    type: Number,
+    default: 50000,
+  },
 });
 
 const User = mongoose.model("innov_user", userSchema);

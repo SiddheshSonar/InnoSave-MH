@@ -61,7 +61,7 @@ const Fighting = ({ user, partyInfo, change, setChange }) => {
                                         />
                                         <div className='w-[60%] flex flex-col items-start'>
                                             <div className='w-full flex flex-col gap-2 p-1'>
-                                                <Bar name='Health' icon={<FavoriteIcon className='text-red' />} value={member.gaming.health} maxValue={member.gaming.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red" />
+                                                <Bar name='Health' icon={<FavoriteIcon className='text-red-600' />} value={member.gaming.health} maxValue={member.gaming.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red-600" />
                                                 {/* <Bar name='Experience' icon={<StarIcon className='text-yellow' />} value={member.gaming.exp} maxValue={member.gaming.maxExp} desc="The Experience Bar indicates your experience, Once it goes above the maximum value you will level up!!" barstyle="bg-yellow" /> */}
                                                 <div className='flex items-center justify-between'>
                                                     <div className='flex items-center gap-2'>
@@ -112,7 +112,7 @@ const Fighting = ({ user, partyInfo, change, setChange }) => {
                                 <div key={i} className='w-full flex items-center justify-start gap-4'>
                                     <div className='w-full flex flex-col items-start gap-2 p-1'>
                                         <div className='w-full flex items-center justify-start gap-2'>
-                                            <div className='w-10 h-10 flex items-center justify-center rounded-full bg-red text-white'>
+                                            <div className='w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white'>
                                                 {i + 1}
                                             </div>
                                             <div className='w-full flex items-center justify-start gap-2 text-white font-semibold tracking-wide'>
@@ -149,7 +149,7 @@ const Fighting = ({ user, partyInfo, change, setChange }) => {
                                 <div className='w-full flex flex-col items-center justify-center'>
                                     <div className='w-[90%] flex flex-col items-start'>
                                         <div className='w-full flex flex-col gap-2 p-1'>
-                                            <Bar name='Health' icon={<FavoriteIcon className='text-red' />} value={partyInfo.opp.health} maxValue={partyInfo.opp.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red" />
+                                            <Bar name='Health' icon={<FavoriteIcon className='text-red-600' />} value={partyInfo.opp.health} maxValue={partyInfo.opp.maxHealth} desc="The Health Bar indicates your health, Once it goes below 0 your level will be lowered!" barstyle="bg-red-600" />
                                         </div>
                                     </div>
                                 </div>

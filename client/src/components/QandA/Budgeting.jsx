@@ -449,7 +449,7 @@ const QuestionsForm2 = () => {
               onClick={() => {
                 toggleBot();
               }}
-              className="bg-red-50)0 rounded-lg w-3/4 text-center font-bold shadow-lg m-4 p-4"
+              className="bg-red-500 rounded-lg w-3/4 text-center font-bold shadow-lg m-4 p-4"
             >
               Window on right side will pop up, please wait to get the answer,
               after that you can ask for help again in same window.

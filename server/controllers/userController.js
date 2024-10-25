@@ -849,12 +849,7 @@ class UserController {
       const user = await User.findOne({ email });
       if (!user)
         return res.status(404).json({ message: "User does not exist!" });
-      const months = [ 
-        { name: "January", value: 1 }, { name: "February", value: 2 }, { name: "March", value: 3 }, { name: "April", value: 4 },
-        { name: "May", value: 5 }, { name: "June", value: 6 }, { name: "July", value: 7 }, { name: "August", value: 8 },
-        { name: "September", value: 9 }, { name: "October", value: 10 }, { name: "November", value: 11 }, { name: "December", value: 12 }
-      ];
-      // group the expenses based on the date
+  
       const groupedExpenses = await User.aggregate([
         { $match: { email } },
         { $unwind: "$expenses" },
@@ -862,30 +857,36 @@ class UserController {
           $group: {
             _id: {
               year: { $year: "$expenses.date" },
-              month: { $month: "$expenses.date" },
-              day: { $dayOfMonth: "$expenses.date" }
+              month: { $month: "$expenses.date" }, 
             },
-            date: { $first: "$expenses.date" },
             expenses: { $push: "$expenses" },
             totalAmount: { $sum: "$expenses.amount" }
           }
         },
         { $sort: { "_id.year": 1, "_id.month": 1 } }
       ]);
-
-      const finalExpenses = [];
-      for (let i = 0; i < groupedExpenses.length; i++) {
-        const month = months.find(month => month.value === groupedExpenses[i]._id.month);
-        finalExpenses.push({ date: groupedExpenses[i]._id.date, month: month.name, day: groupedExpenses[i]._id.day, month_id: groupedExpenses[i]._id.month, year: groupedExpenses[i]._id.year, expenses: groupedExpenses[i].expenses, totalAmount: groupedExpenses[i].totalAmount });
-      }
-
-      res.status(200).json({ groupedExpenses: finalExpenses, expenses: user.expenses });
+  
+      // Add month names to the results
+      const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+  
+      const finalExpenses = groupedExpenses.map(expenseGroup => ({
+        year: expenseGroup._id.year,
+        month: months[expenseGroup._id.month - 1],
+        month_id: expenseGroup._id.month,
+        expenses: expenseGroup.expenses,
+        totalAmount: expenseGroup.totalAmount,
+      }));
+  
+      res.status(200).json({ groupedExpenses: finalExpenses });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Internal Server Error" });
     }
-  }
-
+  };
+  
 }
 
 export default UserController;
