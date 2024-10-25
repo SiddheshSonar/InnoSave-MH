@@ -60,7 +60,7 @@ function App() {
             <>
               <Outlet />
               {token && (
-                <div className="fixed bottom-12 right-36">
+                <div className="fixed bottom-4 right-4">
                   <StaggeredDropDown />
                 </div>
               )}
