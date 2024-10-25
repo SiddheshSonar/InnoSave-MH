@@ -48,9 +48,9 @@ const Tracker = () => {
         setIsVisualizeOpen(false)
     }
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     useEffect(() => {
         setLoading(true)
@@ -323,26 +323,17 @@ const Tracker = () => {
                                         </PieChart>
                                     </ResponsiveContainer>
                                     <ResponsiveContainer height={300}>
-                                        <PieChart>
-                                            <Pie
-                                                data={paymentMethodPieChartData}
-                                                dataKey="value"
-                                                nameKey="name"
-                                                cx="50%"
-                                                cy="50%"
-                                                outerRadius={100}
-                                                fill="#8884d8"
-                                                label
-                                            >
-                                                {paymentMethodPieChartData.map((entry, index) => (
-                                                    <Cell key={`cell-${index}`} fill={entry.color} />
-                                                ))}
-                                            </Pie>
+                                        <BarChart width={150} height={40} data={paymentMethodPieChartData}>
+                                            <CartesianGrid strokeDasharray="3 3" />
+                                            <XAxis dataKey="name" />
+                                            <YAxis />
                                             <Tooltip />
-                                        </PieChart>
+                                            <Legend />
+                                            <Bar dataKey="value" fill="#8884d8" />
+                                        </BarChart>
                                     </ResponsiveContainer>
                                 </div>
-                                <BarChart width={150} height={40} data={barChartData}>
+                                {/* <BarChart width={150} height={40} data={barChartData}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" />
                                     <YAxis />
@@ -359,7 +350,7 @@ const Tracker = () => {
                                         <h1 className='text-lg font-bold'>Amount Spent</h1>
                                         <p className='text-sm font-semibold text-gray-500'>₹{mostSpentDay?.amount}</p>
                                     </div>
-                                </div>
+                                </div> */}
                             </ResponsiveContainer>
                         </DialogContent>
                         <DialogActions>
