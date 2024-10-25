@@ -32,6 +32,27 @@ def get_historical_data():
         return historical_data
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+chat = model.start_chat(
+    history=[
+        {"role": "user", "parts": "You are a financial chatbot. Please only answer questions related to finance. If you don't know the answer to a question, respond with 'I don't know.'"},
+        {"role": "model", "parts": "Understood. I am a financial chatbot. How can I help you?"},
+    ]
+)
+
+@app.route('/chat', methods=['POST'])
+def chat_with_bot():
+    user_message = request.json.get('message')
+    
+    if not user_message:
+        return jsonify({"error": "No message provided."}), 400
+
+    # Send user message to the chatbot and get the response
+    response = chat.send_message(user_message)
+
+    # Return the chatbot's response as JSON
+    return jsonify({"response": response.text})
     
 if __name__ == '__main__':
     
