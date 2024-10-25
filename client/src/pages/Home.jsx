@@ -86,10 +86,13 @@ const Home = () => {
         <section className="grid place-content-center p-12">
           <Center>
             <FloatingPhone />
+            {/* <img 
+            src="https://media2.giphy.com/media/Pxj2KTQfem75GWBxjo/giphy.gif?cid=6c09b952ub8x0eriykff4gejaf7p4exp0lf43or89tehsbg7&ep=v1_gifs_search&rid=giphy.gif&ct=g" 
+            alt="" /> */}
           </Center>
         </section>
       </section>
-      ){/* <Footer /> */}
+      {/* <Footer /> */}
     </>
   );
 };
@@ -164,7 +167,7 @@ const Screen = () => {
       <button
         onClick={() => {
           // navigate("/uploads")
-          window.location.href = "/tasks";
+          window.location.href = "/home";
         }}
         className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white py-2 text-sm font-medium text-primary backdrop-blur"
       >
