@@ -24,7 +24,7 @@ const BlogHome = () => {
             method: 'GET',
             url: 'https://reuters-business-and-financial-news.p.rapidapi.com/article-date/2024-01-01/0/10',
             headers: {
-              'X-RapidAPI-Key': 'eba3c8fc44msh1b0890ac61ac64bp1ccc70jsn0aeac77991e1',
+              'X-RapidAPI-Key': '4b733878b5mshb9e6dc61d8db105p1f3d59jsn7f866d758196',
               'X-RapidAPI-Host': 'reuters-business-and-financial-news.p.rapidapi.com'
             }
           };

@@ -8,7 +8,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 function Footer() {
 
   return (
-    <footer className="bottom-0 left-0 w-full text-white py-8 flex justify-center bg-[#33006F]">
+    <footer className="bottom-0 left-0 w-full text-white py-8 flex justify-center bg-primary">
       <div className='container mx-auto w-full flex flex-col items-center justify-center gap-4'>
         <div className='w-full flex-1 flex flex-col md:flex-row items-center md:items-start justify-around gap-4 md:gap-2'>
           <div className='flex flex-col items-center justify-center gap-2'>
@@ -89,7 +89,7 @@ function Footer() {
         />
         <div className='mb-[-10px]'>
           <div className='opacity-60'>
-          Copyright © FinaPlay 2024. All rights reserved
+          Copyright © InnoSave 2024. All rights reserved
           </div>
         </div>
       </div>
