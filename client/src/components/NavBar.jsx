@@ -134,28 +134,38 @@ function NavBar() {
                         {item.name}
                       </a>
                     ))}
-                    <div
-                    className="relative inline-block">
+                    <div className="relative inline-block">
                       <button
                         onClick={toggleDropdown}
                         onMouseEnter={handleMouseEnter}
                         className={`flex items-center gap-1 px-4 py-2 text-sm font-medium text-white rounded-md focus:outline-none
-                        ${isOpen ? "bg-primary-light" : "hover:bg-primary-light"}
+                        ${
+                          isOpen ? "bg-primary-light" : "hover:bg-primary-light"
+                        }
                           `}
                       >
                         Helpers
-                        <FiChevronDown className={`${isOpen ? "rotate-180" : ""} transition-transform`} />
+                        <FiChevronDown
+                          className={`${
+                            isOpen ? "rotate-180" : ""
+                          } transition-transform`}
+                        />
                       </button>
 
                       {isOpen && (
                         <div
-                        onMouseLeave={handleMouseLeave}  
-                        className="absolute mt-2 w-52 rounded-md bg-white shadow-lg">
+                          onMouseLeave={handleMouseLeave}
+                          className="absolute mt-2 w-52 rounded-md bg-white shadow-lg"
+                        >
                           <ul className="py-1 text-gray-700">
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Tax Assistant</a></li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Investment Portfolio Suggestions</a></li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="/expense-tracker">Expense Tracker</a></li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Bank Statment Analyzer</a></li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">
+                              <a href="/investment-portfolio">
+                                Investment Portfolio Suggestions
+                              </a>
+                            </li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">
+                              <a href="/expense-tracker">Expense Tracker</a>
+                            </li>
                           </ul>
                         </div>
                       )}
