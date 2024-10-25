@@ -14,7 +14,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {StyleSheet, View, Pressable} from 'react-native';
 import {hexToRgb, isMobileUA, isWeb, randomString} from '../../utils/common';
 import {ApplianceNames} from 'white-web-sdk';
-import StorageContext from '../../components/StorageContext';
+import StorageContext from '../StorageContext';
 import {useRoomInfo} from '../room-info/useRoomInfo';
 import Toast from '../../../react-native-toast-message';
 import {IconButton, whiteboardContext, useContent} from 'customization-api';
@@ -24,7 +24,7 @@ import LocalEventEmitter, {
 import {BoardColor} from './WhiteboardConfigure';
 import hexadecimalTransparency from '../../utils/hexadecimalTransparency';
 import StrokeWidthTool from './StrokeWidthTool';
-import {useVideoCall} from '../../components/useVideoCall';
+import {useVideoCall} from '../useVideoCall';
 import {useString} from '../../utils/useString';
 import {
   whiteboardFileUploadErrorToastHeading,

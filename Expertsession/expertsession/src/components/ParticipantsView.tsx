@@ -39,7 +39,7 @@ import {useVideoMeetingData} from './contexts/VideoMeetingDataContext';
 import {useLayout, useContent} from 'customization-api';
 import {getGridLayoutName} from '../pages/video-call/DefaultLayouts';
 import {PeopleHeader} from '../pages/video-call/SidePanelHeader';
-import useCaptionWidth from '../../src/subComponents/caption/useCaptionWidth';
+import useCaptionWidth from '../subComponents/caption/useCaptionWidth';
 import WaitingRoomParticipants from './participants/WaitingRoomParticipants';
 import {
   peoplePanelAudienceSectionHeaderText,
@@ -48,7 +48,7 @@ import {
   peoplePanelNoAudienceJoinedContent,
   peoplePanelNoHostJoinedContent,
   peoplePanelNoUsersJoinedContent,
-} from '../../src/language/default-labels/videoCallScreenLabels';
+} from '../language/default-labels/videoCallScreenLabels';
 
 const ParticipantView = props => {
   const {activeUids, customContent, defaultContent} = useContent();

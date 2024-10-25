@@ -3,7 +3,7 @@ import React from 'react';
 
 import Caption from './Caption';
 import {useCaption} from './useCaption';
-import ThemeConfig from '../../../src/theme';
+import ThemeConfig from '../../theme';
 import {
   calculatePosition,
   isMobileUA,
@@ -12,9 +12,9 @@ import {
   useIsDesktop,
   useIsSmall,
 } from '../../utils/common';
-import IconButton from '../../../src/atoms/IconButton';
+import IconButton from '../../atoms/IconButton';
 
-import ActionMenu, {ActionMenuItem} from '../../../src/atoms/ActionMenu';
+import ActionMenu, {ActionMenuItem} from '../../atoms/ActionMenu';
 
 import LanguageSelectorPopup from './LanguageSelectorPopup';
 import useSTTAPI from './useSTTAPI';
@@ -26,7 +26,7 @@ import {
   SIDE_PANEL_MIN_WIDTH,
   CAPTION_CONTAINER_HEIGHT,
   MOBILE_CAPTION_CONTAINER_HEIGHT,
-} from '../../../src/components/CommonStyles';
+} from '../../components/CommonStyles';
 import useCaptionWidth from './useCaptionWidth';
 import {LanguageType} from './utils';
 import hexadecimalTransparency from '../../utils/hexadecimalTransparency';

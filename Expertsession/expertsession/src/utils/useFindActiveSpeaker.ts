@@ -5,10 +5,10 @@ import {
   useRtc,
   UidType,
 } from 'customization-api';
-import {useContext, useEffect, useRef} from 'react';
-import events, {PersistanceLevel} from '../rtm-events-api';
+import { useContext, useEffect, useRef } from 'react';
+import events, { PersistanceLevel } from '../rtm-events-api';
 import useIsLocalUserSpeaking from './useIsLocalUserSpeaking';
-import {filterObject} from '../utils/index';
+import { filterObject } from './index';
 import ChatContext from '../components/ChatContext';
 import LocalEventEmitter, {
   LocalEventsEnum,
@@ -22,10 +22,10 @@ enum volumeEnum {
 const useFindActiveSpeaker = () => {
   const localUid = useLocalUid();
   const isLocalUserSpeaking = useIsLocalUserSpeaking();
-  const {hasUserJoinedRTM} = useContext(ChatContext);
-  const {RtcEngineUnsafe} = useRtc();
-  const {defaultContent} = useContent();
-  const {uid} = useLocalUserInfo();
+  const { hasUserJoinedRTM } = useContext(ChatContext);
+  const { RtcEngineUnsafe } = useRtc();
+  const { defaultContent } = useContent();
+  const { uid } = useLocalUserInfo();
   const defaultContentRef = useRef(defaultContent);
   const maxSpeakingVolumeRef = useRef(0);
   const minNonSpeakingVolumeRef = useRef(100);
@@ -107,13 +107,13 @@ const useFindActiveSpeaker = () => {
         hasUserJoinedRTM &&
           events.send(volumeEnum.IS_SPEAKING, 'true', PersistanceLevel.Sender);
         //for local usage
-        isSpeakingEventCallback({payload: 'true', sender: uid});
+        isSpeakingEventCallback({ payload: 'true', sender: uid });
       } else {
         //inform remote users
         hasUserJoinedRTM &&
           events.send(volumeEnum.IS_SPEAKING, 'false', PersistanceLevel.Sender);
         //for local usage
-        isSpeakingEventCallback({payload: 'false', sender: uid});
+        isSpeakingEventCallback({ payload: 'false', sender: uid });
       }
     }
   }, [isLocalUserSpeaking, hasUserJoinedRTM]);
@@ -263,7 +263,7 @@ const useFindActiveSpeaker = () => {
     }*/
   };
 
-  const isSpeakingEventCallback = ({payload, sender}) => {
+  const isSpeakingEventCallback = ({ payload, sender }) => {
     if (sender == localUid) {
       // log(' local user speaking stauts', sender, '=', payload);
     } else {
@@ -280,7 +280,7 @@ const useFindActiveSpeaker = () => {
     findActiveSpeaker();
   };
 
-  const speakingVolumeEventCallBack = ({payload, sender}) => {
+  const speakingVolumeEventCallBack = ({ payload, sender }) => {
     if (sender == localUid) {
       log(' local user speaking volume ', sender, '=', payload);
     } else {
@@ -296,7 +296,7 @@ const useFindActiveSpeaker = () => {
     };
   };
 
-  const nonSpeakingVolumeEventCallback = ({payload, sender}) => {
+  const nonSpeakingVolumeEventCallback = ({ payload, sender }) => {
     if (sender == localUid) {
       log(' local user non speaking volume ', sender, '=', payload);
     } else {

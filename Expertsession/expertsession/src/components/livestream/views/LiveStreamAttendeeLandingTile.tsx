@@ -4,10 +4,7 @@ import ImageIcon from '../../../atoms/ImageIcon';
 import {IconsInterface} from '../../../atoms/CustomIcon';
 import hexadecimalTransparency from '../../../utils/hexadecimalTransparency';
 import MeetingLink from '../../../atoms/MeetingLink';
-import {
-  SHARE_LINK_CONTENT_TYPE,
-  useShareLink,
-} from '../../../components/useShareLink';
+import {SHARE_LINK_CONTENT_TYPE, useShareLink} from '../../useShareLink';
 import {isMobileUA, useIsDesktop} from '../../../utils/common';
 import TertiaryButton from '../../../atoms/TertiaryButton';
 import ThemeConfig from '../../../theme';

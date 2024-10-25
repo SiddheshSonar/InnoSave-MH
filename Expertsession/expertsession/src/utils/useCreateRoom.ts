@@ -1,7 +1,7 @@
-import {gql, useMutation} from '@apollo/client';
-import {RoomInfoContextInterface} from '../components/room-info/useRoomInfo';
-import {useSetRoomInfo} from '../components/room-info/useSetRoomInfo';
-import SDKEvents from '../utils/SdkEvents';
+import { gql, useMutation } from '@apollo/client';
+import { RoomInfoContextInterface } from '../components/room-info/useRoomInfo';
+import { useSetRoomInfo } from '../components/room-info/useSetRoomInfo';
+import SDKEvents from './SdkEvents';
 import isSDK from './isSDK';
 
 const CREATE_CHANNEL = gql`
@@ -28,8 +28,8 @@ export type createRoomFun = (
   enablePSTN?: boolean,
 ) => Promise<void>;
 export default function useCreateRoom(): createRoomFun {
-  const [createChannel, {error}] = useMutation(CREATE_CHANNEL);
-  const {setRoomInfo} = useSetRoomInfo();
+  const [createChannel, { error }] = useMutation(CREATE_CHANNEL);
+  const { setRoomInfo } = useSetRoomInfo();
   return async (
     roomTitle: string,
     enablePSTN?: boolean,

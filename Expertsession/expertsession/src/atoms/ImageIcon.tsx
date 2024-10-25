@@ -11,7 +11,7 @@
 */
 import React from 'react';
 import {ViewStyle, View, StyleSheet} from 'react-native';
-import CustomIcon, {IconsInterface} from '../atoms/CustomIcon';
+import CustomIcon, {IconsInterface} from './CustomIcon';
 import {ImageIcon as UIKitImageIcon} from '../../agora-rn-uikit';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';
 

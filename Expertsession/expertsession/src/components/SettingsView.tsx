@@ -44,15 +44,15 @@ import {getGridLayoutName} from '../pages/video-call/DefaultLayouts';
 import {useFocus} from '../utils/useFocus';
 import {SettingsHeader} from '../pages/video-call/SidePanelHeader';
 import {useUserPreference} from './useUserPreference';
-import useCaptionWidth from '../../src/subComponents/caption/useCaptionWidth';
+import useCaptionWidth from '../subComponents/caption/useCaptionWidth';
 import {whiteboardContext} from './whiteboard/WhiteboardConfigure';
-import InlineNotification from '../../src/atoms/InlineNotification';
+import InlineNotification from '../atoms/InlineNotification';
 import {useRoomInfo} from './room-info/useRoomInfo';
-import {useString} from '../../src/utils/useString';
+import {useString} from '../utils/useString';
 import {
   settingPanelNameCantbeChangedInfo,
   settingPanelNameInputLabel,
-} from '../../src/language/default-labels/videoCallScreenLabels';
+} from '../language/default-labels/videoCallScreenLabels';
 
 interface EditNameProps {}
 const EditName: React.FC = (props?: EditNameProps) => {

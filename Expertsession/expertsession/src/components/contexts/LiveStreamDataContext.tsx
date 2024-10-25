@@ -7,9 +7,7 @@ import React, {
   useEffect,
 } from 'react';
 import {createHook} from 'customization-implementation';
-import LiveStreamContext, {
-  raiseHandListInterface,
-} from '../../components/livestream';
+import LiveStreamContext, {raiseHandListInterface} from '../livestream';
 import {ClientRole, useLocalUid} from '../../../agora-rn-uikit';
 import {filterObject} from '../../utils';
 import {useContent} from 'customization-api';

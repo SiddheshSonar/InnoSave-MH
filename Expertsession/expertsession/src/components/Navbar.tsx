@@ -23,12 +23,12 @@ import Settings, {
 } from './Settings';
 import CopyJoinInfo, {CopyJoinInfoProps} from '../subComponents/CopyJoinInfo';
 import {SidePanelType} from '../subComponents/SidePanelEnum';
-import ChatContext from '../components/ChatContext';
+import ChatContext from './ChatContext';
 import isMobileOrTablet from '../utils/isMobileOrTablet';
 import LiveStreamContext from './livestream';
 import {numFormatter} from '../utils/index';
 import {useLayout} from '../utils/useLayout';
-import {useChatNotification} from '../components/chat-notification/useChatNotification';
+import {useChatNotification} from './chat-notification/useChatNotification';
 import useLayoutsData from '../pages/video-call/useLayoutsData';
 import {
   BREAKPOINTS,

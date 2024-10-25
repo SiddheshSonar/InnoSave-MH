@@ -7,17 +7,17 @@ import {
   isWebInternal,
   isAndroid,
   isIOS,
-} from '../../../src/utils/common';
+} from '../../utils/common';
 
 import CommonStyles from '../CommonStyles';
-import {useLayout} from '../../../src/utils/useLayout';
+import {useLayout} from '../../utils/useLayout';
 import {getGridLayoutName} from '../../pages/video-call/DefaultLayouts';
-import {VBHeader} from '../../../src/pages/video-call/SidePanelHeader';
+import {VBHeader} from '../../pages/video-call/SidePanelHeader';
 import useCaptionWidth from '../../subComponents/caption/useCaptionWidth';
 
 import {useVB, VBMode} from './useVB';
 
-import hexadecimalTransparency from '../../../src/utils/hexadecimalTransparency';
+import hexadecimalTransparency from '../../utils/hexadecimalTransparency';
 import VideoPreview from './VideoPreview';
 import {useLocalUserInfo, usePreCall} from 'customization-api';
 import ThemeConfig from '../../theme';

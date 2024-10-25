@@ -1,8 +1,8 @@
 import {Text, View, StyleSheet} from 'react-native';
 import React from 'react';
 
-import ThemeConfig from '../../../src/theme';
-import hexadecimalTransparency from '../../../src/utils/hexadecimalTransparency';
+import ThemeConfig from '../../theme';
+import hexadecimalTransparency from '../../utils/hexadecimalTransparency';
 import {formatTime} from './utils';
 
 interface TranscriptTextProps {

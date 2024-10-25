@@ -11,9 +11,9 @@ import RtcEngine, {
 } from 'react-native-agora';
 import {useRtc} from 'customization-api';
 import RNFS from 'react-native-fs';
-import {ImageSourcePropType} from 'react-native/types';
+import {ImageSourcePropType} from 'react-native';
 import imagePathsArray from './imagePaths';
-import getUniqueID from '../../../src/utils/getUniqueID';
+import getUniqueID from '../../utils/getUniqueID';
 
 export type VBMode = 'blur' | 'image' | 'custom' | 'none';
 

@@ -4,9 +4,9 @@ import {ToggleState} from '../../agora-rn-uikit';
 import AgoraRTC from 'agora-rtc-sdk-ng';
 import {AIDenoiserExtension} from 'agora-extension-ai-denoiser';
 //@ts-ignore
-import wasm1 from './../../node_modules/agora-extension-ai-denoiser/external/denoiser-wasm.wasm';
+import wasm1 from 'agora-extension-ai-denoiser/external/denoiser-wasm.wasm';
 //@ts-ignore
-import wasm2 from './../../node_modules/agora-extension-ai-denoiser/external/denoiser-wasm-simd.wasm';
+import wasm2 from 'agora-extension-ai-denoiser/external/denoiser-wasm-simd.wasm';
 import {createHook} from 'customization-implementation';
 // Necessary To bypass treeshaking, dont remove
 console.log('wasm files loaded are', wasm1, wasm2);

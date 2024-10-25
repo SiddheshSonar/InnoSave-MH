@@ -11,7 +11,7 @@ import React, {SetStateAction} from 'react';
 import IconButton from './IconButton';
 import ThemeConfig from '../theme';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';
-import {isMobileUA, useIsDesktop} from '../../src/utils/common';
+import {isMobileUA, useIsDesktop} from '../utils/common';
 import Spacer from './Spacer';
 
 interface PopupProps extends ModalProps {

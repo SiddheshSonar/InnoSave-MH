@@ -12,7 +12,7 @@
 
 import React, {useContext, useEffect} from 'react';
 import PrimaryButton from '../../atoms/PrimaryButton';
-import {usePreCall} from '../../components/precall/usePreCall';
+import {usePreCall} from './usePreCall';
 import {useString} from '../../utils/useString';
 import {ChannelProfile, PropsContext} from '../../../agora-rn-uikit';
 import {
@@ -21,7 +21,7 @@ import {
 } from '../../language/default-labels/precallScreenLabels';
 import {useRoomInfo} from '../room-info/useRoomInfo';
 import useGetName from '../../utils/useGetName';
-import {useWakeLock} from '../../components/useWakeLock';
+import {useWakeLock} from '../useWakeLock';
 import isMobileOrTablet from '../../utils/isMobileOrTablet';
 import {isWebInternal} from '../../utils/common';
 import useSetName from '../../utils/useSetName';

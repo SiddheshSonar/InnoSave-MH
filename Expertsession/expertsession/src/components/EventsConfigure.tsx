@@ -19,23 +19,20 @@ import {
   PermissionState,
 } from '../../agora-rn-uikit';
 import events, {PersistanceLevel} from '../rtm-events-api';
-import {controlMessageEnum} from '../components/ChatContext';
+import {controlMessageEnum} from './ChatContext';
 import Toast from '../../react-native-toast-message';
 import TertiaryButton from '../atoms/TertiaryButton';
 import {useContent, useLocalUserInfo} from 'customization-api';
 import {isAndroid, isIOS, isWebInternal} from '../utils/common';
 import {useScreenshare} from '../subComponents/screenshare/useScreenshare';
-import {
-  RoomInfoContextInterface,
-  useRoomInfo,
-} from '../components/room-info/useRoomInfo';
-import {useSetRoomInfo} from '../components/room-info/useSetRoomInfo';
+import {RoomInfoContextInterface, useRoomInfo} from './room-info/useRoomInfo';
+import {useSetRoomInfo} from './room-info/useSetRoomInfo';
 import {EventNames} from '../rtm-events';
 import {useWaitingRoomContext} from './contexts/WaitingRoomContext';
-import useWaitingRoomAPI from '../../src/subComponents/waiting-rooms/useWaitingRoomAPI';
+import useWaitingRoomAPI from '../subComponents/waiting-rooms/useWaitingRoomAPI';
 import LocalEventEmitter, {
   LocalEventsEnum,
-} from '../../src/rtm-events-api/LocalEvents';
+} from '../rtm-events-api/LocalEvents';
 import {ENABLE_AUTH} from '../auth/config';
 import {useAuth} from '../auth/AuthProvider';
 import ThemeConfig from '../theme';

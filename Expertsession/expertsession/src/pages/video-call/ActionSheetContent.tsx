@@ -17,18 +17,15 @@ import {
 } from '../../components/room-info/useRoomInfo';
 import LiveStreamControls from '../../components/livestream/views/LiveStreamControls';
 import LiveStreamContext, {RaiseHandValue} from '../../components/livestream';
-import {
-  ChatIconButton,
-  ParticipantsIconButton,
-} from '../../../src/components/Navbar';
+import {ChatIconButton, ParticipantsIconButton} from '../../components/Navbar';
 import {useChatNotification} from '../../components/chat-notification/useChatNotification';
 import {SidePanelType} from '../../subComponents/SidePanelEnum';
 import {useSidePanel} from '../../utils/useSidePanel';
 import {useContent, useLocalUserInfo, ToolbarItem} from 'customization-api';
 import LayoutIconButton from '../../subComponents/LayoutIconButton';
-import CaptionIcon from '../../../src/subComponents/caption/CaptionIcon';
-import TranscriptIcon from '../../../src/subComponents/caption/TranscriptIcon';
-import useSTTAPI from '../../../src/subComponents/caption/useSTTAPI';
+import CaptionIcon from '../../subComponents/caption/CaptionIcon';
+import TranscriptIcon from '../../subComponents/caption/TranscriptIcon';
+import useSTTAPI from '../../subComponents/caption/useSTTAPI';
 import Carousel from '../../atoms/Carousel';
 import {useCaption} from '../../subComponents/caption/useCaption';
 import Settings from '../../components/Settings';

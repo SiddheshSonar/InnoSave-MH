@@ -39,7 +39,7 @@ import {calculatePosition, trimText} from '../../utils/common';
 import {useVideoCall} from '../useVideoCall';
 import {customEvents} from 'customization-api';
 import {useDisableChat} from '../disable-chat/useDisableChat';
-import {useWhiteboard} from '../../components/whiteboard/WhiteboardConfigure';
+import {useWhiteboard} from '../whiteboard/WhiteboardConfigure';
 import {useString} from '../../utils/useString';
 import {
   I18nMuteType,
