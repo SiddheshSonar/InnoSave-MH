@@ -13,10 +13,10 @@ import {useToolbarMenu} from '../utils/useMenu';
 import ToolbarMenuItem from '../atoms/ToolbarMenuItem';
 import {useActionSheet} from '../utils/useActionSheet';
 import RTMEngine from '../rtm/RTMEngine';
-import {useAuth} from '../../src/auth/AuthProvider';
-import {ENABLE_AUTH} from '../../src/auth/config';
-import {useString} from '../../src/utils/useString';
-import {toolbarItemLeaveText} from '../../src/language/default-labels/videoCallScreenLabels';
+import {useAuth} from '../auth/AuthProvider';
+import {ENABLE_AUTH} from '../auth/config';
+import {useString} from '../utils/useString';
+import {toolbarItemLeaveText} from '../language/default-labels/videoCallScreenLabels';
 
 export interface LocalEndcallProps {
   render?: (onPress: () => void) => JSX.Element;

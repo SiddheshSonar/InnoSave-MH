@@ -15,8 +15,8 @@ import DocumentPicker from 'react-native-document-picker';
 import Toast from '../../../react-native-toast-message';
 import RNFS from 'react-native-fs';
 import {saveImagesToAsyncStorage} from './VButils.native';
-import getUniqueID from '../../../src/utils/getUniqueID';
-import {useString} from '../../../src/utils/useString';
+import getUniqueID from '../../utils/getUniqueID';
+import {useString} from '../../utils/useString';
 import {
   vbPanelImageSizeLimitErrorToastHeading,
   vbPanelImageSizeLimitErrorToastSubHeading,
@@ -24,7 +24,7 @@ import {
   vbPanelImageTypeErrorToastSubHeading,
   vbPanelImageUploadErrorToastHeading,
   vbPanelImageUploadErrorToastSubHeading,
-} from '../../../src/language/default-labels/videoCallScreenLabels';
+} from '../../language/default-labels/videoCallScreenLabels';
 import {TextDataInterface} from 'customization-api';
 
 interface VBCardProps {

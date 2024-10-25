@@ -6,9 +6,9 @@ import {IconsInterface} from '../../atoms/CustomIcon';
 import Toast from '../../../react-native-toast-message';
 import {saveImagesToIndexDB, convertBlobToBase64} from './VButils';
 import ImageIcon from '../../atoms/ImageIcon';
-import getUniqueID from '../../../src/utils/getUniqueID';
-import {useString} from '../../../src/utils/useString';
-import {TextDataInterface} from '../../../src/language/default-labels';
+import getUniqueID from '../../utils/getUniqueID';
+import {useString} from '../../utils/useString';
+import {TextDataInterface} from '../../language/default-labels';
 import {
   vbPanelImageSizeLimitErrorToastHeading,
   vbPanelImageSizeLimitErrorToastSubHeading,
@@ -16,7 +16,7 @@ import {
   vbPanelImageTypeErrorToastSubHeading,
   vbPanelImageUploadErrorToastHeading,
   vbPanelImageUploadErrorToastSubHeading,
-} from '../../../src/language/default-labels/videoCallScreenLabels';
+} from '../../language/default-labels/videoCallScreenLabels';
 
 interface VBCardProps {
   type: VBMode;

@@ -57,13 +57,13 @@ import {
 import {useVideoCall} from './useVideoCall';
 import {useScreenshare} from '../subComponents/screenshare/useScreenshare';
 import LayoutIconDropdown from '../subComponents/LayoutIconDropdown';
-import {useCaption} from '../../src/subComponents/caption/useCaption';
-import LanguageSelectorPopup from '../../src/subComponents/caption/LanguageSelectorPopup';
-import useSTTAPI from '../../src/subComponents/caption/useSTTAPI';
+import {useCaption} from '../subComponents/caption/useCaption';
+import LanguageSelectorPopup from '../subComponents/caption/LanguageSelectorPopup';
+import useSTTAPI from '../subComponents/caption/useSTTAPI';
 import {EventNames} from '../rtm-events';
 import events, {PersistanceLevel} from '../rtm-events-api';
 import Toast from '../../react-native-toast-message';
-import {getLanguageLabel} from '../../src/subComponents/caption/utils';
+import {getLanguageLabel} from '../subComponents/caption/utils';
 import ImageIcon from '../atoms/ImageIcon';
 import useGetName from '../utils/useGetName';
 import Toolbar from '../atoms/Toolbar';

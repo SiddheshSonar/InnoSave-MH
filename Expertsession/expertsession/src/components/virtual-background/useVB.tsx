@@ -6,14 +6,14 @@ import AgoraRTC, {ILocalVideoTrack} from 'agora-rtc-sdk-ng';
 import Image from 'react-native';
 import VirtualBackgroundExtension from 'agora-extension-virtual-background';
 //@ts-ignore
-import wasm1 from '../../../node_modules/agora-extension-virtual-background/wasms/agora-wasm.wasm';
+import wasm1 from 'agora-extension-virtual-background/wasms/agora-wasm.wasm';
 import {IconsInterface} from '../../atoms/CustomIcon';
 import {PropsContext} from '../../../agora-rn-uikit';
 import {isMobileUA} from '../../utils/common';
 import {retrieveImagesFromIndexDB} from './VButils';
 import imagePathsArray from './imagePaths';
-import getUniqueID from '../../../src/utils/getUniqueID';
-import {TextDataInterface} from '../../../src/language/default-labels';
+import getUniqueID from '../../utils/getUniqueID';
+import {TextDataInterface} from '../../language/default-labels';
 //@ts-ignore
 
 export type VBMode = 'blur' | 'image' | 'custom' | 'none';

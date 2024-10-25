@@ -8,12 +8,12 @@ import {DispatchContext, useLocalUid} from '../../../agora-rn-uikit';
 import events, {PersistanceLevel} from '../../rtm-events-api';
 import {EventNames} from '../../rtm-events';
 import Toast from '../../../react-native-toast-message';
-import {useWaitingRoomContext} from '../../../src/components/contexts/WaitingRoomContext';
-import {useString} from '../../../src/utils/useString';
+import {useWaitingRoomContext} from '../../components/contexts/WaitingRoomContext';
+import {useString} from '../../utils/useString';
 import {
   peoplePanelWaitingRoomRequestApprovalBtnTxt,
   peoplePanelWaitingRoomRequestDenyBtnTxt,
-} from '../../../src/language/default-labels/videoCallScreenLabels';
+} from '../../language/default-labels/videoCallScreenLabels';
 
 const WaitingRoomButton = props => {
   const {uid, screenUid, isAccept} = props;

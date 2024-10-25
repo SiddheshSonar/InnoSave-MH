@@ -38,15 +38,12 @@ import {filterObject} from '../utils';
 import SDKEvents from '../utils/SdkEvents';
 import isSDK from '../utils/isSDK';
 import {useAsyncEffect} from '../utils/useAsyncEffect';
-import {
-  WaitingRoomStatus,
-  useRoomInfo,
-} from '../components/room-info/useRoomInfo';
+import {WaitingRoomStatus, useRoomInfo} from './room-info/useRoomInfo';
 import LocalEventEmitter, {
   LocalEventsEnum,
 } from '../rtm-events-api/LocalEvents';
 import {PSTNUserLabel} from '../language/default-labels/videoCallScreenLabels';
-import {controlMessageEnum} from '../components/ChatContext';
+import {controlMessageEnum} from './ChatContext';
 export enum UserType {
   ScreenShare = 'screenshare',
 }

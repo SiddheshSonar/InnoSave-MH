@@ -21,8 +21,8 @@ import {
 } from 'react-native';
 import ThemeConfig from '../theme';
 import {primaryButton, primaryButtonText} from '../../theme.json';
-import {IconsInterface} from '../atoms/CustomIcon';
-import ImageIcon from '../atoms/ImageIcon';
+import {IconsInterface} from './CustomIcon';
+import ImageIcon from './ImageIcon';
 
 export interface PrimaryButtonProps extends TouchableOpacityProps {
   text?: string;

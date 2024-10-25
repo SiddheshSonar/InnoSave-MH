@@ -11,8 +11,8 @@ import React, {useState} from 'react';
 import ThemeConfig from '../theme';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';
 import {isWebInternal, isMobileUA} from '../utils/common';
-import {IconsInterface} from '../atoms/CustomIcon';
-import ImageIcon from '../atoms/ImageIcon';
+import {IconsInterface} from './CustomIcon';
+import ImageIcon from './ImageIcon';
 
 interface ButtonProps extends TouchableOpacityProps {
   setRef?: (ref: any) => void;
@@ -38,7 +38,7 @@ const TertiaryButton = (props: ButtonProps) => {
   return (
     <PlatformWrapper setIsHovered={setIsHovered}>
       <TouchableOpacity
-        ref={(ref) => props?.setRef && props.setRef(ref)}
+        ref={ref => props?.setRef && props.setRef(ref)}
         style={[
           styles.container,
           isHovered

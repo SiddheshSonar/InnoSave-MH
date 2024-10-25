@@ -30,7 +30,7 @@ import {
   videoRoomUserFallbackText,
 } from '../language/default-labels/videoCallScreenLabels';
 import {useLanguage} from '../language/useLanguage';
-import {useScreenContext} from '../components/contexts/ScreenShareContext';
+import {useScreenContext} from './contexts/ScreenShareContext';
 
 interface UserPreferenceContextInterface {
   displayName: string;

@@ -11,7 +11,7 @@
 */
 import React from 'react';
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native';
-import ThemeConfig from '../../src/theme';
+import ThemeConfig from '../theme';
 
 const Loading = (props: {
   text: string;

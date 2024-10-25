@@ -36,7 +36,7 @@ import {SidePanelType} from '../subComponents/SidePanelEnum';
 import {videoView} from '../../theme.json';
 import {LiveStreamContextProvider} from '../components/livestream';
 import ScreenshareConfigure from '../subComponents/screenshare/ScreenshareConfigure';
-import {ErrorContext} from '.././components/common/index';
+import {ErrorContext} from '../components/common/index';
 import {PreCallProvider} from '../components/precall/usePreCall';
 import {LayoutProvider} from '../utils/useLayout';
 import Precall from '../components/Precall';

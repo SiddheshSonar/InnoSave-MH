@@ -25,7 +25,7 @@ import Toast from '../../react-native-toast-message';
 import {Text} from 'react-native';
 import StorageContext from './StorageContext';
 
-import type RtcEngine from '../../bridge/rtc/webNg/';
+import type RtcEngine from '../../bridge/rtc/webNg';
 import ColorContext from './ColorContext';
 import {SdkApiContext} from './SdkApiContext';
 import SDKEvents from '../utils/SdkEvents';

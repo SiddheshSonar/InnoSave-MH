@@ -26,11 +26,11 @@ import IconButton from '../atoms/IconButton';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';
 import {BREAKPOINTS, isMobileUA} from '../utils/common';
 import {DispatchContext} from '../../agora-rn-uikit';
-import {useVideoCall} from '../components/useVideoCall';
+import {useVideoCall} from './useVideoCall';
 import useActiveSpeaker from '../utils/useActiveSpeaker';
 import ImageIcon from '../atoms/ImageIcon';
 import ThemeConfig from '../theme';
-import {useWhiteboard} from '../components/whiteboard/WhiteboardConfigure';
+import {useWhiteboard} from './whiteboard/WhiteboardConfigure';
 import {useString} from '../utils/useString';
 import {
   moreBtnRemoveFromLarge,

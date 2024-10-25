@@ -48,9 +48,9 @@ const Tracker = () => {
         setIsVisualizeOpen(false)
     }
 
-    const handleClose = () => {
-        setOpen(false)
-    }
+  const handleClose = () => {
+    setOpen(false);
+  };
 
     useEffect(() => {
         setLoading(true)
@@ -373,3 +373,4 @@ const Tracker = () => {
 }
 
 export default Tracker;
+

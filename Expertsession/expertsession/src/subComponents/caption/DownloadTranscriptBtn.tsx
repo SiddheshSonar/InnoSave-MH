@@ -3,10 +3,10 @@ import React from 'react';
 import {useCaption} from './useCaption';
 import PrimaryButton from '../../atoms/PrimaryButton';
 import useTranscriptDownload from './useTranscriptDownload';
-import ThemeConfig from '../../../src/theme';
-import {IconsInterface} from '../../../src/atoms/CustomIcon';
-import {useString} from '../../../src/utils/useString';
-import {sttDownloadTranscriptBtnText} from '../../../src/language/default-labels/videoCallScreenLabels';
+import ThemeConfig from '../../theme';
+import {IconsInterface} from '../../atoms/CustomIcon';
+import {useString} from '../../utils/useString';
+import {sttDownloadTranscriptBtnText} from '../../language/default-labels/videoCallScreenLabels';
 
 interface DownloadTranscriptBtn {
   textStyle?: TextStyle;

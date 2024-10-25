@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import React, {SetStateAction, useState} from 'react';
 
-import ImageIcon from '../atoms/ImageIcon';
-import {IconsInterface} from '../atoms/CustomIcon';
+import ImageIcon from './ImageIcon';
+import {IconsInterface} from './CustomIcon';
 import ThemeConfig from '../theme';
 import {isWebInternal} from '../utils/common';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';

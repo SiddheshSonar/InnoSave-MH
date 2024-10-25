@@ -32,6 +32,7 @@ import Learning from "./pages/Learning";
 import LeaderBoard from "./pages/FriendsPage";
 import StockGame from "./pages/stockgame";
 import Tracker from "./pages/helpers/Tracker";
+import InvestPortfolio from "./pages/helpers/InvestPortfolio";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -41,7 +42,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (  
+      element: (
         <>
           <ToastContainer
             position="top-center"
@@ -105,7 +106,7 @@ function App() {
         },
         {
           path: "/stock",
-          element: <StockGame/>,
+          element: <StockGame />,
         },
         {
           path: "/savings",
@@ -150,6 +151,10 @@ function App() {
         {
           path: "/expense-tracker",
           element: <Tracker />,
+        },
+        {
+          path: "/investment-portfolio",
+          element: <InvestPortfolio />,
         },
       ],
     },

@@ -5,7 +5,7 @@ import {MaxVideoView, RtcContext, useLocalUid} from '../../../agora-rn-uikit';
 import {ToggleState} from '../../../agora-rn-uikit/src/Contexts/PropsContext';
 import AgoraRTC from 'agora-rtc-sdk-ng';
 import {useVB} from './useVB';
-import ThemeConfig from '../../../src/theme';
+import ThemeConfig from '../../theme';
 import {isMobileUA} from '../../utils/common';
 import InlineNotification from '../../atoms/InlineNotification';
 import {useString} from '../../utils/useString';

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import IconButton, {IconButtonProps} from '../atoms/IconButton';
+import IconButton, {IconButtonProps} from './IconButton';
 import hexadecimalTransparency from '../utils/hexadecimalTransparency';
 import {numFormatter} from '../utils/index';
 import ChatContext from '../components/ChatContext';

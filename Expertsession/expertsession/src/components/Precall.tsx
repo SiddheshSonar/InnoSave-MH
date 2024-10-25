@@ -50,7 +50,7 @@ import ThemeConfig from '../theme';
 import IDPLogoutComponent from '../auth/IDPLogoutComponent';
 
 import VBPanel from './virtual-background/VBPanel';
-import Logo from '../components/common/Logo';
+import Logo from './common/Logo';
 import ImageIcon from '../atoms/ImageIcon';
 import {DeviceSelectProps} from './precall/selectDevice';
 import {useString} from '../utils/useString';

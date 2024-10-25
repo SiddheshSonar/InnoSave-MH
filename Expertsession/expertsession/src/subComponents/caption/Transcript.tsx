@@ -28,19 +28,19 @@ import PrimaryButton from '../../atoms/PrimaryButton';
 import ThemeConfig from '../../theme';
 import Loading from '../Loading';
 import ImageIcon from '../../atoms/ImageIcon';
-import hexadecimalTransparency from '../../../src/utils/hexadecimalTransparency';
+import hexadecimalTransparency from '../../utils/hexadecimalTransparency';
 import Spacer from '../../atoms/Spacer';
 import useStreamMessageUtils from './useStreamMessageUtils';
 import {StreamMessageCallback} from 'react-native-agora/lib/typescript/common/RtcEvents';
 import useCaptionWidth from './useCaptionWidth';
 import DownloadTranscriptBtn from './DownloadTranscriptBtn';
-import {useString} from '../../../src/utils/useString';
+import {useString} from '../../utils/useString';
 import {
   sttSettingSpokenLanguageText,
   sttTranscriptPanelNoSearchResultsFoundText,
   sttTranscriptPanelSearchText,
   sttTranscriptPanelViewLatestText,
-} from '../../../src/language/default-labels/videoCallScreenLabels';
+} from '../../language/default-labels/videoCallScreenLabels';
 
 interface TranscriptProps {
   showHeader?: boolean;

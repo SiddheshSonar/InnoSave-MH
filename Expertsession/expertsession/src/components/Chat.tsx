@@ -38,7 +38,7 @@ import CommonStyles from './CommonStyles';
 import {useLayout} from '../utils/useLayout';
 import {getGridLayoutName} from '../pages/video-call/DefaultLayouts';
 import {ChatHeader} from '../pages/video-call/SidePanelHeader';
-import useCaptionWidth from '../../src/subComponents/caption/useCaptionWidth';
+import useCaptionWidth from '../subComponents/caption/useCaptionWidth';
 
 export interface ChatProps {
   chatBubble?: React.ComponentType<ChatBubbleProps>;

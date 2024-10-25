@@ -11,16 +11,13 @@
 */
 import React, {useContext, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {
-  SHARE_LINK_CONTENT_TYPE,
-  useShareLink,
-} from '../../components/useShareLink';
+import {SHARE_LINK_CONTENT_TYPE, useShareLink} from '../useShareLink';
 import Popup from '../../atoms/Popup';
 import Spacer from '../../atoms/Spacer';
 import PrimaryButton from '../../atoms/PrimaryButton';
 import TertiaryButton from '../../atoms/TertiaryButton';
 import ThemeConfig from '../../theme';
-import {CopyMeetingInfo} from '../../components/Share';
+import {CopyMeetingInfo} from '../Share';
 import {
   isMobileUA,
   isValidReactComponent,

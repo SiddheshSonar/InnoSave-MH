@@ -44,10 +44,10 @@ import {DeviceSelectProps} from './precall/selectDevice';
 import PreCallSettings from './precall/PreCallSettings';
 import VBPanel from './virtual-background/VBPanel';
 import {useVB} from './virtual-background/useVB';
-import LocalSwitchCamera from '../../src/subComponents/LocalSwitchCamera';
-import {useString} from '../../src/utils/useString';
-import {precallYouAreJoiningAsHeading} from '../../src/language/default-labels/precallScreenLabels';
-import {loadingText} from '../../src/language/default-labels/commonLabels';
+import LocalSwitchCamera from '../subComponents/LocalSwitchCamera';
+import {useString} from '../utils/useString';
+import {precallYouAreJoiningAsHeading} from '../language/default-labels/precallScreenLabels';
+import {loadingText} from '../language/default-labels/commonLabels';
 
 const JoinRoomInputView = ({isDesktop}) => {
   const {rtcProps} = useContext(PropsContext);

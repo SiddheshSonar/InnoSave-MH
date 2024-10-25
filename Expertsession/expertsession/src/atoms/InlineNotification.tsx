@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, ViewStyle} from 'react-native';
 import React from 'react';
 import ThemeConfig from '../theme';
 import ImageIcon from './ImageIcon';
-import {isMobileUA} from '../../src/utils/common';
+import {isMobileUA} from '../utils/common';
 
 const InlineNotification = (props: {
   text: string;
