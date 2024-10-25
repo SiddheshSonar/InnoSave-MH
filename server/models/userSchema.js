@@ -189,6 +189,29 @@ const TaskSchema = new mongoose.Schema({
   },
 });
 
+const expenseSchema = new mongoose.Schema({
+  paid_to: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  payment_method: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+});
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -329,6 +352,7 @@ const userSchema = new mongoose.Schema({
 
   inventory: inventoryItem,
   tasks: [TaskSchema],
+  expenses: [expenseSchema],
 });
 
 const User = mongoose.model("innov_user", userSchema);

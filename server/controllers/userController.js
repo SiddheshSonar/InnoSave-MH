@@ -10,7 +10,7 @@ import Party from "../models/partySchema.js";
 dotenv.config();
 
 class UserController {
-  constructor() {}
+  constructor() { }
 
   testing = async (req, res) => {
     try {
@@ -226,7 +226,7 @@ class UserController {
     try {
       const { email } = req.body;
       const user = await User.findOne({ email });
-      if (!user)  
+      if (!user)
         return res.status(404).json({ message: "User does not exist!" });
       res.status(200).json({ message: "success", user });
     } catch (error) {
@@ -473,8 +473,7 @@ class UserController {
             party.opp.health -= user.gaming.avatar.attack * 0.7;
             console.log("Here");
             party.logs.push(
-              `${user.name} completed a task and damaged the Dragon by ${
-                user.gaming.avatar.attack * 0.7
+              `${user.name} completed a task and damaged the Dragon by ${user.gaming.avatar.attack * 0.7
               } health points!`
             );
             if (party.opp.health <= 0) {
@@ -813,6 +812,80 @@ class UserController {
       res.status(500).json({ message: "Internal Server Error" });
     }
   };
+
+  addExpenses = async (req, res) => {
+    try {
+      const { email, expense } = req.body;
+      const user = await User.findOne({ email });
+      if (!user)
+        return res.status(404).json({ message: "User does not exist!" });
+      user.expenses = [...user.expenses, expense];
+      await user.save();
+      res.status(200).json({ message: "success" });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  }
+
+  deleteExpense = async (req, res) => {
+    try {
+      const { email, id } = req.body;
+      const user = await User.findOne({ email });
+      if (!user)
+        return res.status(404).json({ message: "User does not exist!" });
+      user.expenses = user.expenses.filter((expense) => expense._id != id);
+      await user.save();
+      res.status(200).json({ message: "success" });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  }
+
+  getAllExpenses = async (req, res) => {
+    try {
+      const { email } = req.body;
+      const user = await User.findOne({ email });
+      if (!user)
+        return res.status(404).json({ message: "User does not exist!" });
+      const months = [ 
+        { name: "January", value: 1 }, { name: "February", value: 2 }, { name: "March", value: 3 }, { name: "April", value: 4 },
+        { name: "May", value: 5 }, { name: "June", value: 6 }, { name: "July", value: 7 }, { name: "August", value: 8 },
+        { name: "September", value: 9 }, { name: "October", value: 10 }, { name: "November", value: 11 }, { name: "December", value: 12 }
+      ];
+      // group the expenses based on the date
+      const groupedExpenses = await User.aggregate([
+        { $match: { email } },
+        { $unwind: "$expenses" },
+        {
+          $group: {
+            _id: {
+              year: { $year: "$expenses.date" },
+              month: { $month: "$expenses.date" },
+              day: { $dayOfMonth: "$expenses.date" }
+            },
+            date: { $first: "$expenses.date" },
+            expenses: { $push: "$expenses" },
+            totalAmount: { $sum: "$expenses.amount" }
+          }
+        },
+        { $sort: { "_id.year": 1, "_id.month": 1 } }
+      ]);
+
+      const finalExpenses = [];
+      for (let i = 0; i < groupedExpenses.length; i++) {
+        const month = months.find(month => month.value === groupedExpenses[i]._id.month);
+        finalExpenses.push({ date: groupedExpenses[i]._id.date, month: month.name, day: groupedExpenses[i]._id.day, month_id: groupedExpenses[i]._id.month, year: groupedExpenses[i]._id.year, expenses: groupedExpenses[i].expenses, totalAmount: groupedExpenses[i].totalAmount });
+      }
+
+      res.status(200).json({ groupedExpenses: finalExpenses, expenses: user.expenses });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  }
+
 }
 
 export default UserController;

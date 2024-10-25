@@ -32,4 +32,7 @@ uR.get('/get-all-users', uC.getAllUsers);
 uR.post('/update-avatar', uC.setAvatar);
 // uR.post('/add-friend', uC.addFriend);
 uR.post('/update-avatar', uC.setAvatar);
+uR.post('/add-expense', uC.addExpenses);
+uR.post('/delete-expense', uC.deleteExpense);
+uR.post('/get-expense', uC.getAllExpenses);
 export default uR;

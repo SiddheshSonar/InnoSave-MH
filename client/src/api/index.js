@@ -153,6 +153,19 @@ class Api {
   static async setAvatar(data) {
     return await api.post("api/user/update-avatar", data);
   }
+
+  static async getExpenses(data) {
+    return await api.post("api/user/get-expense", data);
+  }
+
+  static async addExpense(data) {
+    return await api.post("api/user/add-expense", data);
+  }
+
+  static async deleteExpense(data) {
+    return await api.post("api/user/delete-expense", data);
+  }
+
 }
 
 export default Api;

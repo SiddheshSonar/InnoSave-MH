@@ -31,6 +31,7 @@ import Savings from "./pages/Savings";
 import Learning from "./pages/Learning";
 import LeaderBoard from "./pages/FriendsPage";
 import StockGame from "./pages/stockgame";
+import Tracker from "./pages/helpers/Tracker";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -145,6 +146,10 @@ function App() {
         {
           path: "financing/qanda",
           element: <FinancingQAndA />,
+        },
+        {
+          path: "/expense-tracker",
+          element: <Tracker />,
         },
       ],
     },
