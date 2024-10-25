@@ -152,10 +152,10 @@ function NavBar() {
                         onMouseLeave={handleMouseLeave}  
                         className="absolute mt-2 w-52 rounded-md bg-white shadow-lg">
                           <ul className="py-1 text-gray-700">
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Tax Assistant</li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Investment Portfolio Suggestions</li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Expense Tracker</li>
-                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer">Bank Statment Analyzer</li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Tax Assistant</a></li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Investment Portfolio Suggestions</a></li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="/expense-tracker">Expense Tracker</a></li>
+                            <li className="px-4 py-2 text-sm hover:bg-gray-200 cursor-pointer"><a href="">Bank Statment Analyzer</a></li>
                           </ul>
                         </div>
                       )}
