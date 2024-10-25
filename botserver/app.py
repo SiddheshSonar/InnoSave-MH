@@ -1,33 +1,17 @@
-from langchain.schema import HumanMessage, AIMessage
-from langchain_community.chat_models.huggingface import ChatHuggingFace
-from langchain.prompts import PromptTemplate
-from flask import Flask, jsonify, request
-from langchain_community.llms import HuggingFaceHub
-from flask_cors import CORS
-import yfinance as yf
 import os
-
+import google.generativeai as genai
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 from dotenv import load_dotenv, get_key
-load_dotenv()
+import yfinance as yf
 
+load_dotenv()
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, origins="http://localhost:5173")
 
-api_token = "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"
-
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = api_token
-
-llm = HuggingFaceHub(
-    repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
-    task="text-generation",
-    model_kwargs={
-        "max_new_tokens": 512,
-        "top_k": 30,
-        "temperature": 0.3,
-        "repetition_penalty": 1.03,
-    },
-)
+genai.configure(api_key=os.environ.get("API_KEY"))
+model = genai.GenerativeModel('models/gemini-1.5-flash')
 
 def get_hist_data(symbol):
     stock = yf.Ticker(symbol)
@@ -50,31 +34,26 @@ def get_historical_data():
         return jsonify({"error": str(e)}), 500
 
 
-def chatwithbot(txt:str):
-    chat_model = ChatHuggingFace(llm=llm)
-    user_template= PromptTemplate(template="{user_input}", input_variables=["user_input"])
-    messages = [
-    HumanMessage(content="..."),
-    AIMessage(content="You're a helpful muli lingual financial assistant, user asks their query and you have to respond accuretly and strictly in same language."),
-    HumanMessage(content=user_template.format(user_input=txt)),
+chat = model.start_chat(
+    history=[
+        {"role": "user", "parts": "You are a financial chatbot. Please only answer questions related to finance. If you don't know the answer to a question, respond with 'I don't know.'"},
+        {"role": "model", "parts": "Understood. I am a financial chatbot. How can I help you?"},
     ]
-    res = chat_model(messages).content
-    return res
+)
 
-@app.route('/chat',methods=["POST"])
-def chat():
-    try:
-        txt = request.form['text']
-        res = chatwithbot(txt)
-        res = str(res)
-        last_inst_index = res.rfind("[/INST]")
-        res = res[last_inst_index + len("[/INST]"):].strip()
-        print(res)
-        return jsonify(res)
-    except Exception as e:
-        return jsonify({"error": str(e)})
+@app.route('/chat', methods=['POST'])
+def chat_with_bot():
+    user_message = request.json.get('message')
+    
+    if not user_message:
+        return jsonify({"error": "No message provided."}), 400
 
+    # Send user message to the chatbot and get the response
+    response = chat.send_message(user_message)
 
+    # Return the chatbot's response as JSON
+    return jsonify({"response": response.text})
+    
 if __name__ == '__main__':
     
     app.run(debug=True)

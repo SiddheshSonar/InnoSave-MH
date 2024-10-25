@@ -71,22 +71,7 @@ const StaggeredDropDown = () => {
           className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute bottom-[120%] left-[-100px] w-[20rem] overflow-hidden"
         >
           <div className="w-full h-full flex flex-col gap-2">
-            <Button
-              variant="contained"
-              component="label"
-              htmlFor="pdf-file-input"
-              color="primary"
-              fullWidth
-            >
-              Choose PDF File
-              <input
-                id="pdf-file-input"
-                type="file"
-                accept="application/pdf"
-                onChange={handleFileChange}
-                hidden
-              />
-            </Button>
+
             <Option
               setOpen={setOpen}
               Icon={
