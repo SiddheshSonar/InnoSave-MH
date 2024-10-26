@@ -18,8 +18,7 @@ Integrated a personal assistant chatbot and a Financial document chat support wh
 - **Web-Rtc TypeScript**: Video Streaming and chatting with live Q&A
 - **yfinance**: Latest Stock shares information.
 - **NLP and RAG for making daily Q&A**: Daily Q&A for financial knowledge.
-- **Mistral 8x7B LLM**: Language model used for natural language processing tasks.
-- **RAG with QDrant Vector DB**: Integrates RAG model and QDrant Vector DB for real-time query resolution.
+- **Gemini**: Language model used for natural language processing tasks.
   
 ## Installation Steps
 
