@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Center from "../../animated-components/Center";
+import Markdown from "https://esm.sh/react-markdown@9";
+
 import {
   Button,
   CircularProgress,
@@ -50,6 +52,8 @@ const Tracker = () => {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const [isVisualizeOpen, setIsVisualizeOpen] = useState(false); // For visualizing modal
+  const [isSuggestionOpen, setIsSuggestionOpen] = useState(false);
+  const [suggestionFromAI, setIsSuggestionFromAI] = useState(null);
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -63,7 +67,10 @@ const Tracker = () => {
       expenses: expenses.expenses,
     });
     console.log(response)
+    setIsSuggestionFromAI(response.data.response)
+    handleSuggestionOpen()
   };
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -74,6 +81,14 @@ const Tracker = () => {
 
   const handleVisualizeClose = () => {
     setIsVisualizeOpen(false);
+  };
+
+  const handleSuggestionOpen = () => {
+    setIsSuggestionOpen(true);
+  };
+
+  const handleSuggestionClose = () => {
+    setIsSuggestionOpen(false);
   };
 
   const handleClose = () => {
@@ -456,6 +471,24 @@ const Tracker = () => {
             </DialogContent>
             <DialogActions>
               <Button onClick={handleVisualizeClose}>Close</Button>
+            </DialogActions>
+          </Dialog>
+          <Dialog
+            open={isSuggestionOpen}
+            onClose={handleSuggestionClose}
+            maxWidth="lg"
+            fullWidth={true}
+          >
+            <DialogTitle>Suggestions from AI to help you in your expenses!</DialogTitle>
+            <DialogContent className="flex items-start justify-start gap-4 w-full flex-wrap">
+              <ResponsiveContainer width="100%" height={300}>
+                  <Markdown>
+                    {suggestionFromAI}
+                  </Markdown>
+              </ResponsiveContainer>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleSuggestionClose}>Close</Button>
             </DialogActions>
           </Dialog>
         </div>
