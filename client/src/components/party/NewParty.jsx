@@ -11,6 +11,7 @@ const NewParty = ({ usersList, user, change, setChange }) => {
     const [partyName, setPartyName] = useState('');
     const [selectedUsers, setSelectedUsers] = useState([]);
     const [emailList, setEmailList] = useState([]);
+    const [btnName, setBtnName] = useState('Create a Party');
 
     const handleUserChange = (event, newValue) => {
         setSelectedUsers(newValue);
@@ -20,12 +21,15 @@ const NewParty = ({ usersList, user, change, setChange }) => {
     };
 
     const handleCreateParty = async () => {
+        setBtnName(<CircularProgress size={24} />);
         if (partyName === '') {
             toast.error('Please enter a party name');
+            setBtnName('Create a Party');
             return;
         }
         if (selectedUsers.length === 0) {
             toast.error('Please select at least one user');
+            setBtnName('Create a Party');
             return;
         }
         await Api.sendInvite({
@@ -44,6 +48,7 @@ const NewParty = ({ usersList, user, change, setChange }) => {
             console.error('Error sending party invite:', error);
             toast.error('Error sending party invite');
         });
+        setBtnName('Create a Party');
     };
 
     return (
@@ -83,7 +88,7 @@ const NewParty = ({ usersList, user, change, setChange }) => {
                 className='bg-[#06447c] text-white p-2.5 mt-4 rounded-xl w-52 hover:bg-d-blue active:bg-[#06447c]'
                 onClick={handleCreateParty}
             >
-                Create a Party
+                {btnName}
             </button>
         </div>
     );

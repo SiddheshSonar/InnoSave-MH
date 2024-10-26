@@ -52,7 +52,7 @@ class GameController {
   sendInvite = async (req, res) => {
     try {
       const { email, partyName, senderName, receiverEmails } = req.body;
-      if (receiverEmails.length > 2) {
+      if (receiverEmails.length > 4) {
         return res
           .status(400)
           .json({ message: "Receiver Email length is unaccepetable!" });
@@ -110,15 +110,15 @@ class GameController {
             to: receiverEmails[i],
             subject: "One-Hub: Party Invite",
             text: `
-You have been invited to join a party from ${senderName} to ${partyName}\n
-Click here to Login: http://localhost:3000/ and join party with party id: ${partyId}
+                You have been invited to join a party from ${senderName} to ${partyName}\n
+                Click here to Login: http://localhost:3000/ and join party with party id: ${partyId}
                     `,
           };
           await transporter.sendMail(mailOptions);
-          res.status(200).json({ message: "Invite sent successfully" });
         }
+        await party.save();
       }
-      await party.save();
+      res.status(200).json({ message: "Invite sent successfully" });
     } catch (err) {
       console.log(err);
       res.status(500).json({ message: "Internal Server Error" });
