@@ -31,13 +31,13 @@ function App() {
 
       setMessages((prevMessages) => [
         ...prevMessages,
-        { user: "Bot", text: data.response },
+        { user: "Daddy", text: data.response },
       ]);
     } catch (error) {
       console.error("Error fetching response:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { user: "Bot", text: "Sorry, an error occurred." },
+        { user: "Daddy", text: "Sorry, an error occurred." },
       ]);
     }
     setChatLoading(false);

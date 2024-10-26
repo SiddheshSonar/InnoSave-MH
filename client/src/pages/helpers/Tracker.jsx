@@ -54,6 +54,7 @@ const Tracker = () => {
   const [isVisualizeOpen, setIsVisualizeOpen] = useState(false); // For visualizing modal
   const [isSuggestionOpen, setIsSuggestionOpen] = useState(false);
   const [suggestionFromAI, setIsSuggestionFromAI] = useState(null);
+  const [sugLoading, setSugLoading] = useState(false);
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -62,11 +63,13 @@ const Tracker = () => {
   };
 
   const handleSuggestion = async () => {
+    setSugLoading(true);
     const response = await axios.post("http://localhost:5003/suggestion", {
       expenses: expenses.expenses,
     });
     console.log(response)
     setIsSuggestionFromAI(response.data.response)
+    setSugLoading(false);
     handleSuggestionOpen()
   };
 
@@ -245,8 +248,7 @@ const Tracker = () => {
               className="flex items-center gap-2"
               fullWidth
             >
-              <AutoAwesomeIcon />
-              Suggestion For You
+              {sugLoading ? <CircularProgress size={24} /> : <><AutoAwesomeIcon /> Suggestion For You</>}
             </Button>
             <div>
               <LocalizationProvider dateAdapter={AdapterDayjs}>

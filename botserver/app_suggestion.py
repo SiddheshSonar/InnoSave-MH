@@ -17,7 +17,7 @@ model_pf = genai.GenerativeModel('models/gemini-1.5-flash')
 chat = model_pf.start_chat(history=[
     {
         'role': "user",
-        'parts': "Act as an Indian financial advisor, large language model. You will be given monthly expenses and you are supposed to suggest improvements in my expenses, so that i don't waste my money."
+        'parts': "Act as an Indian financial advisor, large language model. You will be given monthly expenses and you are supposed to suggest improvements in my expenses, so that i don't waste my money. "
     },
     {
         'role': "model",
