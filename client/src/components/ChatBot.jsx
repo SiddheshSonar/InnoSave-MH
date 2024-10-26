@@ -46,15 +46,6 @@ const StaggeredDropDown = () => {
     dispatch(fetchLLMInference(msg));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file && file.type === "application/pdf") {
-      setPdfFile(file);
-    } else {
-      toast.error("Please select a PDF file.");
-    }
-  };
-
   useEffect(() => {
     if (inferenceResult) {
       setMsgList([...msgList, { msg: inferenceResult, type: "bot" }]);
@@ -71,7 +62,6 @@ const StaggeredDropDown = () => {
           className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute bottom-[120%] left-[-100px] w-[20rem] overflow-hidden"
         >
           <div className="w-full h-full flex flex-col gap-2">
-
             <Option
               setOpen={setOpen}
               Icon={
