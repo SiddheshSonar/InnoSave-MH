@@ -62,7 +62,8 @@ Integrated a personal assistant chatbot and a Financial document chat support wh
 - `MongoDb Atlas`
 
 ## Overview Video
-[[Video Demo]]([youtu.be/Is73RUKZmo0](https://youtu.be/E-dQphshQ54))
+[Video Demo](https://youtu.be/vsDuyJISPx0)
+
 
 ## Features
 1. **Minecraft-Themed Interface**: A visually appealing, game-like interface that makes financial learning enjoyable and engaging.
