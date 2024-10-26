@@ -58,6 +58,8 @@ const Tracker = () => {
   };
 
   const handleSuggestion = async () => {
+    console.log(expenses.expenses);
+
     const response = await axios.post("http://localhost:5003/suggestion", {
       expenses: expenses.expenses,
     });
