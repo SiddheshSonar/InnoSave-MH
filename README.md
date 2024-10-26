@@ -10,8 +10,8 @@ Users can get to know the expert sessions and can follow the same where interact
 Integrated a personal assistant chatbot and a Financial document chat support where users can upload the docs and chat or get to know the insights of the docs with stored chat history. Used Mistral for seamless user support, RAG, Qdrant vector DB, and created a stock market analysis game designed to enhance investment skills for users with no prior finance knowledge.
 
 ## Application Flowchart
-![Application Flowchart](![image](https://github.com/user-attachments/assets/03c8bddc-2d5d-476b-8a7b-88f75896f66e)
-)
+![image](https://github.com/user-attachments/assets/3f54343a-b9be-44cb-8843-6e3a00533125)
+
 
 ## Tech Stack
 - **React Js**: Frontend Development Framework
