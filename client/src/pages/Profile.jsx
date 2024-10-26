@@ -26,6 +26,7 @@ function Profile() {
     name: '',
     bio: '',
     email: userInfo.email,
+    monthlyIncome: 0,
   });
   const [uploadedPfp, setUploadedPfp] = useState(null);
   const userPfp = useSelector(state => state.pfp.userPfp);
@@ -65,6 +66,7 @@ function Profile() {
       name: user.name,
       bio: user.bio,
       email: user.email,
+      monthlyIncome: parseInt(user.monthlyIncome),
     });
     setIsEditMode(true);
   };
@@ -115,7 +117,7 @@ function Profile() {
       toast.error('Name cannot be empty!');
       return;
     }
-    // console.log('editedInfo:', editedInfo.pfp);
+    console.log('editedInfo:', editedInfo);
     await Api.editUser({ info: editedInfo })
       .then((res) => {
         console.log('User info updated:', res.data);
@@ -123,6 +125,8 @@ function Profile() {
           ...JSON.parse(localStorage.getItem('user')),
           name: editedInfo.name,
           pfp: editedInfo.pfp,
+          bio: editedInfo.bio,
+          monthlyIncome: parseInt(editedInfo.monthlyIncome),
         };
         localStorage.setItem('user', JSON.stringify(updateUser));
         dispatch(togglePfp());
@@ -211,6 +215,9 @@ function Profile() {
                       <div className='w-full break-words text-base tracking-wide'>
                         {user.bio}
                       </div>
+                      <div className='w-full break-words text-base font-semibold text-black text-opacity-50 tracking-wide'>
+                        Monthly Income: {user.monthlyIncome}
+                      </div>
                     </>
                   ) : (
                     <>
@@ -230,6 +237,14 @@ function Profile() {
                           fullWidth
                           value={editedInfo.bio}
                           onChange={(e) => setEditedInfo({ ...editedInfo, bio: e.target.value })}
+                        />
+                        <TextField
+                          label='Monthly Income'
+                          type='number'
+                          variant='outlined'
+                          fullWidth
+                          value={editedInfo.monthlyIncome}
+                          onChange={(e) => setEditedInfo({ ...editedInfo, monthlyIncome: e.target.value })}
                         />
                       </div>
                     </>
