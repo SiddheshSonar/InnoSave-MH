@@ -79,5 +79,8 @@ Integrated a personal assistant chatbot and a Financial document chat support wh
 12. **Personal Assistant Chatbot**: A chatbot powered by Mistral for seamless user support, providing assistance and answering queries in real time.
 13. **Financial Document Chat Support**: Users can upload financial documents and chat with the assistant to gain insights and receive explanations, with stored chat history for future reference.
 14. **Interactive Gaming Experience**: Engaging game mechanics where users can battle monsters and complete tasks for rewards, enhancing the learning process through gamification.
-15. **Real-Time User Support**: Integrated real-time support to assist users with any issues or questions they may have, ensuring a smooth learning experience.
-16. **Resource Library**: A collection of resources, including videos, articles, and interactive tools, to support users in their financial education journey.
+15. **Resource Library**: A collection of resources, including videos, articles, and interactive tools, to support users in their financial education journey.
+16. **AI Financial Assistant Chatbot:** Powered by the Gemini API, provides on-demand advice tailored to each user's past interactions.
+17. **Personalized Investment Portfolio:** AI-driven portfolio recommendations based on income, goals, and risk tolerance.
+18. **Expense Tracker:** Input and analyze expenses, with suggestions on reducing unnecessary spending via a dedicated chatbot.
+19. **Expert Sessions:** Live sessions with financial experts, featuring real-time polls and Q&A.
