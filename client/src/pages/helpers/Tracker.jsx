@@ -58,9 +58,11 @@ const Tracker = () => {
   };
 
   const handleSuggestion = async () => {
+    console.log(expenses.expenses)
     const response = await axios.post("http://localhost:5003/suggestion", {
       expenses: expenses.expenses,
     });
+    console.log(response)
   };
   const handleClickOpen = () => {
     setOpen(true);
@@ -267,7 +269,7 @@ const Tracker = () => {
             </div>
             <div className="flex flex-wrap items-start justify-start gap-8 w-full">
               {expenses ? (
-                expenses.expenses.map((expense, index) => (
+                expenses.expenses?.map((expense, index) => (
                   <div
                     key={index}
                     className="bg-white relative flex flex-col gap-2 p-4 border border-gray-200 rounded-lg shadow-lg !min-w-[30%] w-auto"
@@ -410,7 +412,7 @@ const Tracker = () => {
                         fill="#8884d8"
                         label
                       >
-                        {chartData.map((entry, index) => (
+                        {chartData?.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
