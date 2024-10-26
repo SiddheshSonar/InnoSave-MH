@@ -65,6 +65,7 @@ const Tracker = () => {
     console.log(expenses.expenses)
     const response = await axios.post("http://localhost:5003/suggestion", {
       expenses: expenses.expenses,
+      monthlyIncome: user.monthlyIncome,
     });
     console.log(response)
     setIsSuggestionFromAI(response.data.response)

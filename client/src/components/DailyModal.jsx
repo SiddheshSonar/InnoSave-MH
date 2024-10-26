@@ -45,6 +45,7 @@ const DailyModal = ({ open, handleClose }) => {
       setIsAnswerCorrect(true);
 
       toast.success("Correct answer!");
+      handleClose();
     } else {
       setIsAnswerCorrect(false);
       toast.error("Incorrect answer! Try again.");
