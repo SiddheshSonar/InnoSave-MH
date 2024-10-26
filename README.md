@@ -49,24 +49,20 @@ Integrated a personal assistant chatbot and a Financial document chat support wh
 - `mui-one-time-password-input`
 - `Redux`
 
-### Backend
+### Node Server
 - `cors`
 - `twillio`
   
 ### Flask
-- `Langchain_community`
-- `langchain`
-- `Huggingface - Mistral 8x7B`
+- `Gemini`
 - `flask_cors`
 - `yfinance`
-- `Retrieval Augmented Reality(RAG)`
-- `qDrant` 
 
 ### Database
 - `MongoDb Atlas`
 
 ## Overview Video
-[[Video Demo]]([youtu.be/Is73RUKZmo0](https://youtu.be/Is73RUKZmo0?si=4Z6QeeL22J69dxZs))
+[[Video Demo]]([youtu.be/Is73RUKZmo0](https://youtu.be/E-dQphshQ54))
 
 ## Features
 1. **Minecraft-Themed Interface**: A visually appealing, game-like interface that makes financial learning enjoyable and engaging.
