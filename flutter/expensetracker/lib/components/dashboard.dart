@@ -197,9 +197,9 @@ class Dashboard extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(
                   context: context,
-                  isScrollControlled: true, // Allow the modal to be resized
+                  isScrollControlled: true, 
                   builder: (BuildContext context) {
-                    return TransactionForm(); // The form component from form.dart
+                    return TransactionForm();
                   },
                 );
               },
