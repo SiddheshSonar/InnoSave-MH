@@ -31,13 +31,13 @@ function App() {
 
       setMessages((prevMessages) => [
         ...prevMessages,
-        { user: "Daddy", text: data.response },
+        { user: "FinaBot", text: data.response },
       ]);
     } catch (error) {
       console.error("Error fetching response:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { user: "Daddy", text: "Sorry, an error occurred." },
+        { user: "FinaBot", text: "Sorry, an error occurred." },
       ]);
     }
     setChatLoading(false);
@@ -50,7 +50,7 @@ function App() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`my-2 p-2 rounded-lg min-w-40 max-w-[50%] w-fit ${
+              className={`my-2 p-2 rounded-lg min-w-40 max-w-[50%] w-fit text-justify ${
                 msg.user === "You"
                   ? "!self-end bg-blue-500 text-white text-right"
                   : "!self-start bg-gray-300 text-gray-800 text-left"

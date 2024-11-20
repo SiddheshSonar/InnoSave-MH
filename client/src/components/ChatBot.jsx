@@ -97,7 +97,9 @@ const StaggeredDropDown = () => {
                       >
                         {msg.type === "user" ? "You" : "Chatbot"}
                       </div>
-                      <div className="w-full">{msg.msg}</div>
+                      <div className="w-full">
+                        <Markdown>{msg.msg}</Markdown>
+                      </div>
                       <div className="text-xs self-end font-light">
                         {/* {val.time}   */}
                       </div>
